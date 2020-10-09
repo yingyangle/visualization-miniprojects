@@ -1,7 +1,7 @@
 .container{
-  padding-top: 20px;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-top: 1%;
+  padding-right: 10%;
+  padding-left: 10%;
   font-family: 'Georgia', sans-serif;
 }
 .tab {
@@ -9,7 +9,7 @@
 }
 h3{
 
-  padding-top: 10px;
+  padding-top: 2%;
   border-bottom: thick solid;
 }
 .title{
@@ -50,15 +50,15 @@ nav a{
 }
 a{
   text-decoration:none;
-  letter-spacing:1px;
+  letter-spacing:2%;
   color:#16151b;
   position: relative;
 }
 
 section ul, section ol {
-  margin-left: 10px;
+  margin-left: 2.5%;
 }
 
 section ul ul, section ol ol, section ol ul {
-  margin-left: 15px;
+  margin-left: 5%;
 }
