@@ -131,15 +131,29 @@
 		<!-- REFLECTION -->
 		<div id="reflection">
 			<h3>Reflection</h3>
+
 			<h4>Data Selection</h4>
-			<p>In the age of technology and social distancing, taking online courses has become an attractive alternative to traditional forms of education. Given that much of university education is now online due to the pandemic, the differences between traditional university and online education are decreasing rapidly. edX is an MOOC (massive open online course) platform created by Harvard and MIT to host free online courses at the university level to a worldwide audience. It is the most well-known online education provider, and typically a first choice for online learners. We’re curious to see what insights we can find in the edX dataset about the behavior of online learners and how education could look in the future. </p>
-		</div>
+			<p>In the age of technology and social distancing, taking online courses has become an attractive alternative to traditional forms of education. Given that much of university education is now online due to the pandemic, the differences between traditional university and online education are decreasing rapidly. edX is an MOOC (massive open online course) platform created by Harvard and MIT to host free online courses at the university level to a worldwide audience. It is the most well-known online education provider, and typically a first choice for online learners. We were curious to see what insights we can find in the edX dataset about the behavior of online learners and how education could look in the future. </p>
+		
 			<h4>Data Processing</h4>
-			<p>The dataset provides individual records of course registration. So we sum the number up for each course and each country. Besides, the course category is also unclear for some courses. The course named “Introduction to computer science and programming” is categorized under the CS label. However, the course named “Introduction to Computer Science I” has Null as its category label. After examining the data and comparing course id, we found that “Introduction to computer science and programming” is provided by MIT while “Introduction to Computer Science I” is provided by Harvard. So, we processed the data and have the former course labeled as CS(MIT) and the latter course labeled as CS(Harvard).</p>
+			<p>Although the data was generally very clean and organized, we did have to alter it a bit in order to improve the clarity of our results. Firstly, the shortened versions of the course names were unclear in some cases, and one course, "Introduction to Computer Science I", wasn't given a shortened name at all. To fix this, we defined aliases for all the courses and gave them new names which we thought would better convey to the viewer the content of the course. We also wanted to compare courses in the humanities and in STEM, so we grouped the data into manually defined categories using Tableau's grouping feature. Additionally, we also added some calculated fields to find specific metrics such as the most popular course for each country.</p>
+
+			<img src="img/excel.png" alt="a sample of our dataset">
+			<br>
+			
 			<h4>Hypothesis Exploration</h4>
+			In coming up with our hypotheses, we used two main topics to guide the focus of our questions. These two topics were course popularity and student performance. Using the demographic information and course activity for each student, we explored the potential relationships between the student data and trends in course popularity and overall success in the course as measured by grades. In particular, we were interested in looking at the gender balance across students in different courses and countries, which courses were most popular in different demographic groups, and the link between a student's grade and whether they paid for a certification.
+			<br><br>
+
 			<h4>Generating Visualizations</h4>
+			We did stuff.
+			<br><br>
+
 			<h4>Narrative Design</h4>
+			We narrated stuff.
+
 		</div>
+	</div>
 
 	<!-- SCRIPTS -->
 	<script src="" async defer></script>

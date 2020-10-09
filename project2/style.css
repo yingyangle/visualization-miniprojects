@@ -25,8 +25,17 @@ h3 {
 	border-bottom: 2px solid;
 }
 
+img {
+	max-width: 900px;
+}
+
 .container {
 	padding: 50px 100px;
+}
+
+.container img {
+	display: block;
+	margin: auto;
 }
 
 #toc {
