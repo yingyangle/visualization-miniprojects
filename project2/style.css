@@ -1,64 +1,50 @@
-.container{
-  padding-top: 1%;
-  padding-right: 10%;
-  padding-left: 10%;
-  font-family: 'Georgia', sans-serif;
-}
-.tab {
-  tab-size: 4;
-}
-h3{
-
-  padding-top: 2%;
-  border-bottom: thick solid;
-}
-.title{
-  font-family: 'Lobster';
-}
-nav {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  background-color: white;
-  /* display: block; */
-}
-
-nav ul{
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  width : 100%;
-  justify-content : center;
-  background-color: white;
-}
-
-nav>ul>li {
-  margin-left: 5%;
-  margin-right: 5%
-}
-
-nav a{
-  font-family: Georgia, serif;
-  font-weight: 600;
-  text-transform:uppercase;
-  position:relative;
-  display:inline-block;
-}
-.source{
-  background-color: #BAC9CE;
-}
-a{
-  text-decoration:none;
-  letter-spacing:2%;
-  color:#16151b;
-  position: relative;
-}
-
-section ul, section ol {
-  margin-left: 2.5%;
+/* section ul, section ol {
+	margin-left: 2.5%;
 }
 
 section ul ul, section ol ol, section ol ul {
-  margin-left: 5%;
+	margin-left: 5%;
+} */
+
+body, .tab {
+	font-family: Corbel;
+	font-size: 1rem;
+}
+
+a {
+	color: #6ba6b8;
+	
+}
+
+a:hover {
+	color: #7ec5da;
+}
+
+h3 {
+	margin: 20px 0;
+	border-bottom: 2px solid;
+}
+
+.container {
+	padding: 50px 100px;
+}
+
+#toc {
+	margin: auto;
+	display: block;
+	max-width: 300px;
+}
+
+.tab {
+	tab-size: 4;
+}
+
+.tableauPlaceholder {
+	margin: auto;
+	display: block;
+}
+
+#logos img {
+	max-width: 300px;
+	max-height: 80px;
 }
