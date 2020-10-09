@@ -4,25 +4,88 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>Visualization Mini Projects</title>
+		<title>Storytelling with Tableau</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<!-- STYLESHEETS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 	</head>
 	<body>
+		<nav>
+		        <ul>
+		          <li>
+		            <a href="#Introduction">Introduction</a>
+		          </li>
+		          <li>
+		            <a href="#Detail">Detail</a>
+		          </li>
+		          <li>
+		            <a href="#Reflection">Reflection</a>
+		        </ul>
+		      </nav>
+		<div class="container tab">
 
-		<div class="text-center">
-
-			<br>
-			<h1>Visualization Mini Projects</h1>
-			<h3>Christine Yang, Yuezhen Chen, Ann Pan</h3>
 			<br><br>
+			<h2 class='title text-center'>Mini Project 2: Storytelling with Tableau</h2>
 
-			<a href="project1">Mini Project 1</a><br>
-			<a href="project2">Mini Project 2</a><br>
+			<div id="Introduction">
+				<h3>Introduction</h3>
+				<p>For this dataset exploration assignment, we chose to analyze the <a class='source' href='https://public.tableau.com/en-us/s/resources?qt-overview_resources=1#qt-overview_resources' target="_blank">“EdX_2013 Academic Year Courses”</a> dataset from Tableau Public. The dataset contains the course and demographic information from 641,138 registered users for 13 online edX courses offered by Harvard and MIT. For each user, the dataset includes the gender, country of residence, course title, grade achieved, whether the course was completed, whether the student received a course certification, and other details about the student’s course activity. The large number of data dimensions in this dataset provided the ability to investigate the popularity of certain subjects across demographic groups and the patterns of student activity across subjects. We structured our data exploration around the following topics and questions:</p>
+				<h4>Topic one: Knowledge Sender</h4>
+				<section class='topic'>
+					<ul>
+						<li>How do courses rank in popularity?</li>
+						<li>How does the popularity rank of courses change in different countries?</li>
+						<li>How does the popularity rank of courses change with gender?</li>
+						<li>How does the popularity of STEM courses compare to that of humanities courses?</li>
+						<li>How does the popularity of Harvard courses compare to that on MIT courses?</li>
+					</ul>
+					<h4>Topic two: Knowledge Receiver</h4>
+					<section class='topic'>
+						<ul>
+							<li>What percentage of registered students completes the course or gains a certificate? </li>
+							<li>What is the relationship between the student’s grade in the course and whether or not they received the course certification?</li>
+							<li>What is the average grade achieved by students in different countries?</li>
+							<li>How does different gender perform in different classes?</li>
+							<li>What is the average grade achieved in each course?</li>
+							<li>What is the relationship between the number of days a student is active and their grade in the course?</li>
+						</ul>
+				</section>
+			</div>
 
+			<div id="Detail">
+				<h3>Details</h3>
+					<h4>Topic one: Knowledge Sender</h4>
+					<div class='tableauPlaceholder' id='viz1602277409836' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;CoursePopularitybyCountry&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MiniProject2Vis&#47;CoursePopularitybyCountry' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;CoursePopularitybyCountry&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602277409836');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+					<div class='tableauPlaceholder' id='viz1602270860566' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Viz2_16022657043790&#47;OverallCoursePopularity&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Viz2_16022657043790&#47;OverallCoursePopularity' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Viz2_16022657043790&#47;OverallCoursePopularity&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602270860566');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+					
+					<h4>Topic two: Knowledge Receiver</h4>
+					<div class='tableauPlaceholder' id='viz1602278725560' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MiniProject2Vis&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602278725560');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='420px';vizElement.style.maxWidth='650px';vizElement.style.width='100%';vizElement.style.minHeight='587px';vizElement.style.maxHeight='887px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+						<div class='tableauPlaceholder' id='viz1602279664296' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;AverageGradebyCountry&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MiniProject2Vis&#47;AverageGradebyCountry' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mi&#47;MiniProject2Vis&#47;AverageGradebyCountry&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602279664296');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+					<div class='tableauPlaceholder' id='viz1602257578073' style='position: relative'>
+							<noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VizMiniProject2_16022202291120&#47;GenderPerCourse&#47;1_rss.png' style='border: none' /></a></noscript>
+							<object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+								<param name='name' value='VizMiniProject2_16022202291120&#47;GenderPerCourse' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VizMiniProject2_16022202291120&#47;GenderPerCourse&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                
+							<script type='text/javascript'>                    var divElement = document.getElementById('viz1602257578073');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+							<div class='tableauPlaceholder' id='viz1602261511258' style='position: relative'>
+								<noscript><a href='http:&#47;&#47;127.0.0.1:5500'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VizMiniProject2_16022202291120&#47;GenderPerCourse&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VizMiniProject2_16022202291120&#47;GenderPerCourse' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VizMiniProject2_16022202291120&#47;GenderPerCourse&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1602261511258');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+			<div id="Reflection">
+				<h3>Reflection</h3>
+				<h4>Data Selection</h4>
+				<p>In the age of technology and social distancing, taking online courses has become an attractive alternative to traditional forms of education. Given that much of university education is now online due to the pandemic, the differences between traditional university and online education are decreasing rapidly. edX is an MOOC (massive open online course) platform created by Harvard and MIT to host free online courses at the university level to a worldwide audience. It is the most well-known online education provider, and typically a first choice for online learners. We’re curious to see what insights we can find in the edX dataset about the behavior of online learners and how education could look in the future. </p>
+			</div>
+			  <h4>Data Processing</h4>
+				<p>The dataset provides individual records of course registration. So we sum the number up for each course and each country. Besides, the course category is also unclear for some courses. The course named “Introduction to computer science and programming” is categorized under the CS label. However, the course named “Introduction to Computer Science I” has Null as its category label. After examining the data and comparing course id, we found that “Introduction to computer science and programming” is provided by MIT while “Introduction to Computer Science I” is provided by Harvard. So, we processed the data and have the former course labeled as CS(MIT) and the latter course labeled as CS(Harvard).</p>
+				<h4>Hypothesis Exploration</h4>
+				<h4>Generating Visualizations</h4>
+				<h4>Narrative Design</h4>
 		</div>
-		
+
+		<!-- SCRIPTS -->
+		<script src="" async defer></script>
 	</body>
 </html>
