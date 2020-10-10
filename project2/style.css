@@ -49,9 +49,8 @@ img {
 }
 
 .tableauPlaceholder {
-	margin: auto;
+	margin-bottom: 30px;
 	display: block;
-	margin-top: 20px;
 }
 
 #logos img {
