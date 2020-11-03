@@ -55,21 +55,49 @@ function createBarchart(container) {
 		yAxisGroup.transition()
 			.call(yAxis)
 
-		let rect = g.selectAll('rect')
+			let rect = g.selectAll('rect')
 			.data(new_data)
 			.join(
-			enter => {
+			  enter => {
 				let rect_enter = enter
-				.append('rect')
-				.attr('x', d => d.x0)
-				.attr('y', d => yScale(d.length))
-				.attr('width', 0)
-				.attr('height', d => height - yScale(d.length))
+				  .append('rect')
+				  // .attr('x', d => d.x0)
+				  .attr('x', function(d) {
+					console.log(d.x0, d.length, yScale(d.length), height - yScale(d.length))
+					return xScale(d.x0)
+				  })
+				  .attr('y', d => yScale(d.length))
+				  .attr('width', 0)
+				  .attr('height', d => height - yScale(d.length))
+				  .on('mouseenter', (event, d) => {
+					// show tooltip on hover
+					let pos = d3.pointer(event, window)
+					console.log('pos', pos)
+					
+					var tooltip = d3.select('.tooltip')
+					.style('display', 'block')
+					.style('position', 'fixed')
+					.style("background-color", "black")
+					.style("color","white")
+					.style("border", "solid")
+					.style("border-width", "1px")
+					.style("border-radius", "5px")
+					.style("padding", "10px")
+					.style('top', pos[1] + "px")
+					.style('left', pos[0] + "px")
+					.html("<p id='tooltip'>Alcohol Consumption: " + d.x0 + "<br> # Students: " + d.length+ "</p>");
+					
+					console.log(d.length);
+				  })
+				  .on('mouseleave', (event, d) => { 
+					// hide tooltip on hover out
+					d3.select('.tooltip').style('display', 'none');
+				  })
 				rect_enter.append('title')
 				return rect_enter
-			},
-			update => update,
-			exit => exit.remove()
+			  },
+			  update => update,
+			  exit => exit.remove()
 			)
 
 		rect.transition()
