@@ -4,18 +4,17 @@
 		<meta charset="utf-8" />
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 		<title>Alcohol Consumption in Italian High Schoolers</title>
+		<link rel="icon" type="image/x-icon" href="https://freeiconshop.com/wp-content/uploads/edd/beer-outline-filled.png">
 
 		<!-- STYLESHEETS -->
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">  
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css" />
-
-		<!-- SCRIPTS-->
-		<script defer src = "https://d3js.org/d3.v6.min.js"></script>
-		<script defer src = "barchart.js"></script>
 		
 	</head>
 
@@ -28,13 +27,15 @@
 			<br>
 			<h3>Motivation</h3>
 			<p>For this project, we are interested in investigating which demographic or personal information such as age, gender, academic performance, overall health, social life, and parental background might be correlated with alcohol consumption. From this data exploration, we want to gain some insight into the factors that may contribute to or result from alcohol consumption in high school students.</p>
+			<br>
 			<h3>Design Rationale</h3>
 			<p>The data we have are not temporal, but both ordinal data(age, academic performance, alcohol consumption level, etc.) and nominal data(genders, demographic, etc.). We decided to collect information through frequencies, proportions, and percentages and thought the dataset's best visualization methods are pie charts and bar charts. When visualizing nominal data, we aimed to perceive if values are the same or different: position, color hue (blue, red, green, etc.), and shape are all reasonable options. So we decided to use color channels to strengthen the distinction between categories. We chose pink to represent female while blue to represent male, and purple to represent urban while yellow to represent the rural.</p>
 			<p>For the interaction technique, we decided not to use zoom or brushing because those techniques we just learned concentrate on specifying a focused area in the area chart. However, our data are ordinal, and employing area focusing interaction technique seems to be an unnecessary move. Thus, we used the other interaction technique professor mentioned in the instruction - selection. We made the interaction coordinated that when users select one portion of the pie chart, the bar chart will be updated and show only the filtered data.
 			</p>
 			<br>
 			<h3>Design & Development</h3>
-			<p>During the design and development process we decided that because this dataset has a lot of demographic variables, it would be clearer to put gender and neighborhood demographics into pie charts so that clicking a slice in the pie chart will change the bar graph to show the count of students corresponding to that demographic. We believe that this is an intuitive way for the user to explore relationships between the variables and ultimately wanted to see the effects that gender and neighborhood could have on alcohol consumption. Some struggles we faced were trying to find data that showed insightful information and finding relationships between variables because there were many variables available in the dataset, and tying different visualizations together. A lesson learned was to put more time into the exploratory process prior to creating the visualizations.</p>
+			<p>During the design and development process we decided that because this dataset has a lot of demographic variables, it would be clearer to put gender and neighborhood demographics into pie charts so that clicking a slice in the pie chart will change the bar graph to show the count of students corresponding to that demographic. We believe that this is an intuitive way for the user to explore relationships between the variables and ultimately wanted to see the effects that gender and neighborhood could have on alcohol consumption. Some struggles we faced were trying to find data that showed insightful information and finding relationships between variables because there were many variables available in the dataset, and tying different visualizations together. A lesson we learned was to put more time into the exploratory process prior to creating the visualizations.</p>
+			<p>For most of the exploratory process, we all worked together on a Zoom call to discuss how we wanted to design our graphs and which questions we wanted to investigate. Once we had this planned out, we each started working on a section of the graph. Ann and Christine started the work for the bar chart and pie chart, and Yuezhen started the work for a line chart. During the debugging process, we all contributed to different parts of the project and helped add small features to the various graphs.</p>
 			<br>
 			
 		</div>
