@@ -73,7 +73,7 @@ function createBarchart(container) {
 					// show tooltip on hover
 					let pos = d3.pointer(event, window)
 					console.log('pos', pos)
-					
+					var total = 1044;
 					var tooltip = d3.select('.tooltip')
 					.style('display', 'block')
 					.style('position', 'fixed')
@@ -85,7 +85,7 @@ function createBarchart(container) {
 					.style("padding", "10px")
 					.style('top', pos[1] + "px")
 					.style('left', pos[0] + "px")
-					.html("<p id='tooltip'>Alcohol Consumption: " + d.x0 + "<br> # Students: " + d.length+ "</p>");
+					.html("<p id='tooltip'>Alcohol Consumption: " + d.x0 + "<br> # Students: " + d.length+ "<br> Percentage: " +d.length/total+"</p>");
 					
 					console.log(d.length);
 				  })
