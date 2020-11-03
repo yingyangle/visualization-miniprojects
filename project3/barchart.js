@@ -42,9 +42,9 @@ function createBarchart(container) {
 	const yAxisGroup = g.append('g')
 		.attr('class', 'y axis')
 
-	function update(new_data) {
+	function update(new_data, avg_container) {
 		new_data = new_data.slice(0,5)
-		console.log(new_data)
+		console.log('bar', new_data)
 		xScale.domain([1,2,3,4,5])
 		yScale.domain([0, d3.max(new_data, d => d.length)])
 		xAxisGroup.transition()
@@ -95,6 +95,14 @@ function createBarchart(container) {
 			.attr('x', width - 100)
 			.attr('y', height + 80)
 			.text('High Alcohol Consumption')
+
+		// average alcohol consumption
+		let sum = new_data.map((d,i) => d.length * (i+1))
+			.reduce((a,b) => a + b) 
+		let num_items = new_data.map((d,i) => d.length)
+			.reduce((a,b) => a + b) 
+		d3.select(avg_container)
+			.html(Math.round(sum * 100 / num_items) / 100)
 	}
 
 	return update
@@ -153,47 +161,48 @@ function createPieChart(container, dataAttr, color) {
 	.attr('text-anchor', 'beginning')
 
 	function update(new_data) {
-	const pied = pie(new_data)
-	colorScale.domain(new_data.map(d => d.key))
+		console.log('pie', new_data)
+		const pied = pie(new_data)
+		colorScale.domain(new_data.map(d => d.key))
 
-	// DATA JOIN
-	const old = g.selectAll('path').data()
+		// DATA JOIN
+		const old = g.selectAll('path').data()
 
-	function tweenArc(d, i) {
-		const interpolate = d3.interpolateObject(old[i], d)
-		return (t) => arc(interpolate(t))
+		function tweenArc(d, i) {
+			const interpolate = d3.interpolateObject(old[i], d)
+			return (t) => arc(interpolate(t))
+		}
+
+		const path = g
+			.selectAll('path')
+			.data(pied, d => d.data.key)
+			.join(
+			enter => {
+				const path_enter = enter
+				.append('path')
+				.attr('d', (d, i) => arc(noSlice[i]))
+				.on('click', (e, d) => {
+					if (data[dataAttr] === d.data.key) {
+					data[dataAttr] = null
+					} else {
+					data[dataAttr] = d.data.key
+					}
+					updateApp()
+				})
+				path_enter.append('title')
+				return path_enter
+			},
+			update => update,
+			exit => exit.transition().attrTween('d', tweenArc).remove()
+			)
+		path.classed('selected', d => d.data.key === data.selectedGender)
+			.transition()
+			.attrTween('d', tweenArc)
+			.style('fill', d => colorScale(d.data.key))
+
+		path.select('title').text(d => `${labelsDict[d.data.key]}: ${d.data.values.length} students`)
 	}
 
-	const path = g
-		.selectAll('path')
-		.data(pied, d => d.data.key)
-		.join(
-		enter => {
-			const path_enter = enter
-			.append('path')
-			.attr('d', (d, i) => arc(noSlice[i]))
-			.on('click', (e, d) => {
-				if (data[dataAttr] === d.data.key) {
-				data[dataAttr] = null
-				} else {
-				data[dataAttr] = d.data.key
-				}
-				updateApp()
-			})
-			path_enter.append('title')
-			return path_enter
-		},
-		update => update,
-		exit => exit.transition().attrTween('d', tweenArc).remove()
-		)
-	path
-		.classed('selected', d => d.data.key === data.selectedGender)
-		.transition()
-		.attrTween('d', tweenArc)
-		.style('fill', d => colorScale(d.data.key))
-
-	path.select('title').text(d => `${labelsDict[d.data.key]}: ${d.data.values.length} students`)
-	}
 	return update
 }
 
@@ -253,9 +262,9 @@ function updateApp() {
 	const filtered = filterData()
 	const { alcWeekendData, genderPieData, alcWeekdayData, addressPieData } = wrangleData(filtered)
 	
-	alcWeekend(alcWeekendData)
+	alcWeekend(alcWeekendData, '#alc-weekend-avg')
 	genderPieChart(genderPieData)
-	alcWeekday(alcWeekdayData)
+	alcWeekday(alcWeekdayData, '#alc-weekday-avg')
 	addressPieChart(addressPieData)
 	d3.select('#selectedGender').text(labelsDict[data.selectedGender] || 'None')
 	d3.select('#selectedAddress').text(labelsDict[data.selectedAddress] || 'None')
