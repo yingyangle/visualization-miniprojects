@@ -1,3 +1,57 @@
-.container {
-	padding: 50px;
+body {
+	font-family: Corbel, san-serif;
+	font-size: 16px;
 }
+
+.container{
+	padding: 100px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 50px;
+	font-family: 'Amatic SC', Corbel, san-serif;
+}
+
+h3 {
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Amatic SC', Corbel, san-serif;
+}
+
+a {
+	color: #6ba6b8;
+	opacity: 0.86;
+	font-size: 18px;
+}
+
+a:hover {
+	color: #6ba6b8;
+	opacity: 1;
+}
+
+img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+select, select:hover, select:focus {
+	width: 200px;
+}
+
+path {
+	cursor: pointer; 
+}
+
+.col-8 rect {
+	fill: #fad89e;
+}
+
+.col-8 rect, path {
+	opacity: 0.86;
+}
+
+.col-8 rect:hover, path:hover {
+	opacity: 1;
+}
+
