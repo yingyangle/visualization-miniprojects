@@ -85,7 +85,7 @@ function createBarchart(container) {
 					.style("padding", "10px")
 					.style('top', pos[1] + "px")
 					.style('left', pos[0] + "px")
-					.html("<p id='tooltip'>Alcohol Consumption: " + d.x0 + "<br> # Students: " + d.length+ "<br> Percentage: " +d.length/total+"</p>");
+					.html("<p id='tooltip'>Alcohol Consumption: " + d.x0 + "<br> # Students: " + d.length/1044+ "<br> Percentage in total: " + d.length/1044 + "% </p>");
 					
 					console.log(d.length);
 				  })
@@ -106,7 +106,7 @@ function createBarchart(container) {
 			.attr('x', d => xScale(d.x0) + 5)
 			.attr('y', d => yScale(d.length))
 
-		rect.select('title').text(d => `Alcohol Consumption: ${d.x0}\n# Students: ${d.length}`)
+		rect.select('title').text(d => `Alcohol Consumption: ${d.x0}\n# Students: ${d.length}\n# Percentage: ${d.length/1044*100}%`)
 		
 		// y axis label		
 		svg.append('text')
@@ -228,7 +228,7 @@ function createPieChart(container, dataAttr, color) {
 			.attrTween('d', tweenArc)
 			.style('fill', d => colorScale(d.data.key))
 
-		path.select('title').text(d => `${labelsDict[d.data.key]}: ${d.data.values.length} students`)
+		path.select('title').text(d => `${labelsDict[d.data.key]}: ${d.data.values.length} students \n# Percentage: ${d.data.values.length/1044*100} %`)
 	}
 
 	return update
