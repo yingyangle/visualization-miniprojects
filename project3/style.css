@@ -1,5 +1,5 @@
 body {
-	font-family: Corbel, san-serif;
+	font-family: 'Corbel', sans-serif;
 	font-size: 16px;
 }
 
@@ -10,13 +10,13 @@ body {
 h1 {
 	text-align: center;
 	font-size: 50px;
-	font-family: 'Amatic SC', Corbel, san-serif;
+	font-family: 'Amatic SC', 'Corbel', sans-serif;
 }
 
 h3 {
 	text-align: center;
 	font-size: 30px;
-	font-family: 'Amatic SC', Corbel, san-serif;
+	font-family: 'Amatic SC', 'Corbel', sans-serif;
 }
 
 a {
@@ -26,7 +26,7 @@ a {
 }
 
 a:hover {
-	color: #6ba6b8;
+	color: #7FBD6F;
 	opacity: 1;
 }
 
@@ -43,15 +43,33 @@ path {
 	cursor: pointer; 
 }
 
-.col-8 rect {
+.row {
+	margin: auto;
+}
+
+.col-md-8 rect {
 	fill: #fad89e;
 }
 
-.col-8 rect, path {
+.col-md-8 rect, path {
 	opacity: 0.86;
 }
 
-.col-8 rect:hover, path:hover {
+.col-md-8 rect:hover, path:hover {
 	opacity: 1;
 }
 
+#left-col {
+	margin: 120px auto;
+}
+
+@media only screen and (max-width: 900px) {
+	.container {
+		padding: 50px 20px;
+	}
+
+	#left-col {
+		margin: auto;
+		margin-bottom: 60px;
+	}
+}

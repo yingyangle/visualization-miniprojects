@@ -1,13 +1,6 @@
-/* section ul, section ol {
-	margin-left: 2.5%;
-}
-
-section ul ul, section ol ol, section ol ul {
-	margin-left: 5%;
-} */
-
 body, .tab {
-	font-family: Corbel;
+	color: #5b5b5b;
+	font-family: 'Nunito Sans', sans-serif;
 	font-size: 1rem;
 }
 
@@ -26,7 +19,7 @@ h3 {
 }
 
 img {
-	max-width: 900px;
+	max-width: 100%;
 }
 
 .container {
@@ -35,7 +28,7 @@ img {
 
 .container img {
 	display: block;
-	margin: auto;
+	margin: 20px auto;
 }
 
 #toc {
@@ -56,4 +49,10 @@ img {
 #logos img {
 	max-width: 300px;
 	max-height: 80px;
+}
+
+@media only screen and (max-width: 900px) {
+	.container {
+		padding: 50px 20px;
+	}
 }

@@ -1,17 +1,26 @@
-
+// show image preview
 function showImage(project) {
-	document.querySelector(".image-container").style.display = 'inline'
+	$('.image-container').css('display', 'inline')
 	var img = 'img/' + project.slice(project.lastIndexOf('/')+1, project.length) + '.png'
-	document.querySelector(".image-container img").src = img
+	$('.image-container img').attr('src', img)
 }
 
+// hide image preview
 function hideImage() {
-	document.querySelector(".image-container").style.display = 'none'
+	$('.image-container').css('display', 'none')
 }
 
-document.querySelectorAll('#container a').forEach(function(element) {
-	element.addEventListener('mouseover', function() {
-		showImage(element.href)
+// show image preview on hover
+$('#container a').on('mouseover', function() {
+		console.log($(this), $(this).attr('href'))
+		showImage($(this).attr('href'))
 	})
-	element.addEventListener('mouseout', hideImage)
+$('#container a').on('mouseout', hideImage)
+
+// make image preview follow cursor
+$(document).bind('mousemove', function(e){
+	$('.image-container').css({
+		left: e.pageX + 20,
+		top: e.pageY + 20,
+	})
 })

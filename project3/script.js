@@ -20,8 +20,11 @@ let height = outerHeight - margin.top - margin.bottom
 
 function createBarchart(container) {
 	const svg = d3.select(container)
-		.attr('width', width + margin.left + margin.right)
-		.attr('height', height + margin.top + margin.bottom)
+		.attr('viewBox', [0, 0, 
+			width + margin.left + margin.right, 
+			height + margin.top + margin.bottom])
+		.append('g')
+		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
 	const g = svg.append('g')
 		.attr('transform', `translate(${margin.left},${margin.top})`)
@@ -95,9 +98,9 @@ function createBarchart(container) {
 				  })
 				rect_enter.append('title')
 				return rect_enter
-			  },
-			  update => update,
-			  exit => exit.remove()
+				},
+				update => update,
+				exit => exit.remove()
 			)
 
 		rect.transition()
@@ -141,22 +144,27 @@ function createPieChart(container, dataAttr, color) {
 	const radius = 100
 
 	const svg = d3.select(container)
-	.attr('width', radius * 2 + margin * 2)
-	.attr('height', radius * 2 + margin * 2)
+		// .attr('width', radius * 2 + margin * 2)
+		// .attr('height', radius * 2 + margin * 2)
+		.attr('viewBox', [0, 0, 
+			radius * 2 + margin * 2, 
+			radius * 2 + margin * 2])
+		.append('g')
+		.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
-	const g = svg.append('g').
-	attr('transform', `translate(${radius + margin}, ${radius + margin})`)
+	const g = svg.append('g')
+		.attr('transform', `translate(${radius + margin}, ${radius + margin})`)
 
 	const pie = d3.pie()
-	.value(d => d.values.length)
-	.sortValues(null)
-	.sort(null)
+		.value(d => d.values.length)
+		.sortValues(null)
+		.sort(null)
 	const arc = d3.arc()
-	.outerRadius(radius)
-	.innerRadius(0)
+		.outerRadius(radius)
+		.innerRadius(0)
 	const noSlice = [
-	{ startAngle: 0, endAngle: Math.PI * 2, padAngle: 0 },
-	{ startAngle: 0, endAngle: 0, padAngle: 0 },
+		{ startAngle: 0, endAngle: Math.PI * 2, padAngle: 0 },
+		{ startAngle: 0, endAngle: 0, padAngle: 0 },
 	]
 	
 	const colorScale = d3.scaleOrdinal(color)
@@ -164,29 +172,31 @@ function createPieChart(container, dataAttr, color) {
 	let labels = dataAttr == 'selectedGender' ? ['Female', 'Male'] : ['Urban', 'Rural']
 	
 	// legend boxes
-	svg.append('g').selectAll('rect')
-			.data(labels)
-			.enter()
-			.append('rect')
-			.attr('class', 'box')
-			.attr('height', 10) 
-			.attr('width', 10) 
-			.attr('x', (d,i) => 50 + i * 120)
-			.attr('y', 2 * radius + margin + 10)
-			.attr('fill', (d,i) => color[i])
+	svg.append('g')
+		.selectAll('rect')
+		.data(labels)
+		.enter()
+		.append('rect')
+		.attr('class', 'box')
+		.attr('height', 10) 
+		.attr('width', 10) 
+		.attr('x', (d,i) => 50 + i * 120)
+		.attr('y', 2 * radius + margin + 10)
+		.attr('fill', (d,i) => color[i])
 	
 	// legend labels
-	svg.append('g').selectAll('text')
-	.data(labels)
-	.enter()
-	.append('text')
-	.text(d => d)
-	.attr('x', (d,i) => 64 + i * 120)
-	.attr('y', 2 * radius + margin + 20)
-	.attr('font-size', '12px')
-	// .attr('fill', '#6d6d6d')
-	.attr('font-family', 'Lucida Grande')
-	.attr('text-anchor', 'beginning')
+	svg.append('g')
+		.selectAll('text')
+		.data(labels)
+		.enter()
+		.append('text')
+		.text(d => d)
+		.attr('x', (d,i) => 64 + i * 120)
+		.attr('y', 2 * radius + margin + 20)
+		.attr('font-size', '12px')
+		// .attr('fill', '#6d6d6d')
+		.attr('font-family', 'Lucida Grande')
+		.attr('text-anchor', 'beginning')
 
 	function update(new_data) {
 		console.log('pie', new_data)

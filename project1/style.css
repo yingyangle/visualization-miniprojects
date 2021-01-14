@@ -1,55 +1,56 @@
 body {
-  color: black;
-  line-height: 1.5;
+	color: #5b5b5b;
+	font-family: 'Nunito Sans', sans-serif;
+	line-height: 1.7;
 }
 
 a {
-  text-decoration:none;
-  color: #82B9BB;
-  display: block;
+	text-decoration:none;
+	color: #82B9BB;
+	display: block;
 }
 
 a:hover {
-  text-decoration:none;
-  color: #628c8d;
-  display: block;
+	text-decoration:none;
+	color: #628c8d;
+	display: block;
 }
 
 #site-title {
-  margin-top: 4rem;
-  margin-bottom: 6rem;
+	margin-top: 4rem;
+	margin-bottom: 6rem;
 }
 
 .heading {
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
 }
 
 .row {
-  margin-top: 2rem;
+	margin-top: 2rem;
 }
 
 img {
-  max-width: 60%;
-  margin: auto;
-  display: block;
-  margin-bottom: 1rem;
+	max-width: 60%;
+	margin: auto;
+	display: block;
+	margin-bottom: 1rem;
 }
 
 .col-4 img {
-  min-width: 100%;
+	min-width: 100%;
 }
 
 .col-6 img {
-  max-width: 80%;
+	max-width: 80%;
 }
 
 .analysis{
-  text-align: left;
-  border-style: 5px solid #3e3c3c;
-  border-radius: 12px;
-  background: #F2F2F2;
-  color: #3e3c3c;
-  padding: 30px;
-  margin: 2rem 0;
+	text-align: left;
+	border-style: 5px solid #3e3c3c;
+	border-radius: 12px;
+	background: #F2F2F2;
+	color: #3e3c3c;
+	padding: 30px;
+	margin: 2rem 0;
 }

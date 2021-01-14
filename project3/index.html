@@ -18,7 +18,16 @@
 
 		<!-- SCRIPTS-->
 		<script defer src = "https://d3js.org/d3.v6.min.js"></script>
-		<script defer src = "barchart.js"></script>
+		<script defer src = "script.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-163440366-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-163440366-1');
+		</script>
 		
 	</head>
 
@@ -28,14 +37,14 @@
 
 			<!-- TITLE -->
 			<div class="row">
-				<div class="col-2">
+				<div class="col-md-2 text-center">
 					<img src="https://cdn.iconscout.com/icon/free/png-256/alcohol-26-76644.png" style="width: 100px;">
 				</div>
-				<div class="col-8">
+				<div class="col-md-8 text-center">
 					<h1>Alcohol Consumption</h1>
 					<h1>in Italian High Schoolers</h1>
 				</div>
-				<div class="col-2">
+				<div class="col-md-2 text-center">
 					<img src="https://www.flaticon.com/svg/static/icons/svg/1744/1744053.svg" style="width: 80px; padding: 10px;">
 				</div>
 			</div>
@@ -73,7 +82,7 @@
 
 			<div class="row text-center">
 				<!-- PIE CHARTS -->
-				<div class="col-4">
+				<div id="left-col" class="col-md-4">
 					<h3>Gender</h3>
 					<svg id="gender"></svg>
 					<br><br><br><br>
@@ -84,14 +93,14 @@
 				</div>
 				
 				<!-- BAR CHARTS -->
-				<div class="col-8">
+				<div id="right-col" class="col-md-8">
 					<h3>Weekday Alcohol Consumption</h3>
-					<span>Average Alcohol Consumption: </span><span id='alc-weekday-avg'></span>
+					<span>Average Alcohol Consumption: </span><span id="alc-weekday-avg"></span>
 					<svg id="alc-weekday"></svg>
 					<br><br>
 					
 					<h3>Weekend Alcohol Consumption</h3>
-					<span>Average Alcohol Consumption: </span><span id='alc-weekend-avg'></span>
+					<span>Average Alcohol Consumption: </span><span id="alc-weekend-avg"></span>
 					<svg id="alc-weekend"></svg>
 					
 					<!-- TOOLTIP -->
